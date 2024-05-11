@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disco</title>
+    <style>
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .size{
+            margin:20px;
+            width:30vw;
+            height:90vh;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="size" id="box1"></div>
+    <div class="size" id="box2"></div>
+    <div class="size" id="box3"></div>
+    <div class="size" id="box4"></div>
+    <div class="size" id="box5"></div>
+
+<script>
+    console.log("By Avneesh");
+    setInterval(function(){
+        let f = Math.floor(Math.random() * 226);
+        let s = Math.floor(Math.random() * 226);
+        let t = Math.floor(Math.random() * 226);
+        
+        let first = `rgb(${f},225,${t})`;
+        console.log(first);
+        document.getElementById("box1").style.backgroundColor = `${first}`;
+
+        let second = `rgb(${s},${f},${t})`;
+        console.log(second);
+        document.getElementById("box2").style.backgroundColor = `${second}`;
+
+        let third = `rgb(${t},${s},225)`;
+        console.log(third);
+        document.getElementById("box3").style.backgroundColor = `${third}`;
+
+        let fourth = `rgb(${f},${s},${f})`;
+        console.log(fourth);
+        document.getElementById("box4").style.backgroundColor = `${fourth}`;
+
+        let fifth = `rgb(225,${s},${t})`;
+        console.log(fifth);
+        document.getElementById("box5").style.backgroundColor = `${fifth}`;
+    },50);
+</script>
+</body>
+</html>

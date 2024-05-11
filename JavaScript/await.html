@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Await</title>
+</head>
+<body>
+    <input type="text" id="l" placeholder="Enter Length">
+    <input type="text" id="b" placeholder="Enter Breadth">
+    <button onclick="main2()">Get</button>
+
+    <script>
+
+        const rectArea = async ()=>{
+        return new Promise((resolve,reject)=>{
+            let l = document.getElementById("l").value;
+            let b = document.getElementById("b").value;
+            let area;
+            console.log("Processing area of rectangle");
+            setTimeout(()=>{
+                area = l*b;
+                console.log(area);
+                resolve(area);
+            },3000);
+        
+        }).then((value)=>{
+                
+                return new Promise ((resolve,reject)=>{
+                console.log("Processing radius of circle with the area of rectangle");
+            let areac = value;
+            let radius;
+            let r2;
+            setTimeout(()=>{
+                r2 = areac / 3.14;
+                radius = Math.sqrt(r2);
+                console.log(radius);
+                resolve(radius);
+            },3000);})
+        
+        
+        }).then((value)=>{
+
+            return new Promise((resolve,reject)=>{
+                let s = value;//radius
+                let areas;
+                console.log("Processing the area of square with the help of radius of circle");
+                setTimeout(function (){
+                    areas = s*s;
+                    console.log(areas);
+                    resolve(areas);
+                },3000);})
+
+
+            })
+        }
+
+    let main2 = async ()=>{
+        console.time("main2");
+        await rectArea();
+        console.timeEnd("main2");
+    }
+
+
+    </script>
+</body>
+</html>

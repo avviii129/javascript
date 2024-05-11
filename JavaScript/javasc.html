@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full javascript</title>
+   
+</head>
+<body>
+    
+
+
+    <!-- practice set q1 -->
+
+    <!-- <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
+        </li>
+      </ul> -->
+
+      <!-- practice set q2 -->
+
+      <!-- <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+      
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+    
+      </table> -->
+
+
+    <!-- <h1 id="first">hey..</h1> -->
+    <!-- <div class="di">there</div>
+    <div class="di">how are you</div> -->
+    
+<!-- <div>
+  <h2>Keep notes</h2>
+  <input id="in" type="text" placeholder = "Enter the number of note">
+  <textarea name="" id="ta" cols="30" rows="10" placeholder = "1. write note"></textarea>
+<button id="but" onclick="gettext()">Save</button>
+</div> -->
+
+
+<style>
+      .red{
+        background-color:red;
+        color:white;
+      }
+      .yellow{
+        background-color:yellow;
+        color:rgb(177, 31, 31);
+      }
+      .text{
+        color:blue;
+      }
+</style>
+<script>
+
+async function fetapi (){
+  let resource = "companies?_quantity=10";
+  let p1 = fetch(`https://fakerapi.it/api/v1/${resource}`);
+  p1.then((value)=>{return value.json();}).then((value1)=>{console.log(value1);
+  for (let obj of value1.data){
+    console.log(obj.name + " in " + obj.country);
+  };})
+}
+
+fetapi();
+
+// let key;
+// let text;
+
+// const gettext = ()=>{
+//   key = document.getElementById("in").value;
+//   text = document.getElementById("ta").value;
+//   localStorage.setItem(key,text);
+// }
+
+
+
+// let avn = "Avneesh";
+// for(let obj of avn){
+  
+// }
+// console.log(avn.length);
+
+
+// let n = confirm("Do you want to hide this message?");
+// if(n==true){
+//   first.setAttribute("hidden","true");
+// }
+// else{
+//   first.setAttribute("class","text");
+// }
+
+
+
+
+// changing classes using javascript "ram-baan"
+// first.classList= "red text";
+
+// adding classes
+// first.classList.add('yellow');
+
+// practice set q1
+// document.getElementById("home-tab2").style.color="red";
+
+// Array.from(document.getElementsByTagName("li")).forEach((element) =>{element.style.backgroung="green";})
+
+// document.getElementsByClassName("di")[0].style.color="green";
+// document.getElementsByClassName("di")[2].style.color="green";
+
+
+
+
+
+// let a  = "avneesh";
+//console.log(typeof a);
+// a = "avneesh" + 8;
+//console.log(a);
+
+
+
+
+
+//                       object
+// const z = {
+//     name : "avneesh",
+//     std : "B.C.A. 3rd sem"
+// }
+// z["friend"]="arsh";
+// z["name"]="anurag";
+// z.fee=20000;
+// // console.log(z.friend);
+// // console.log(z.fee);
+// // console.log(z["name"]);
+// for (let i = 0; i<=Object.keys(z).length;i++){
+//   console.log(Object.keys(z) + ":" + Object.values(z));
+// }
+
+//                   power(super script) operator
+// let o = 2 , y = 3;
+//console.log(o**y);
+
+
+//                     logical ques.
+//let p = prompt("Enter your age for verification");
+//p=Number.parseInt(p);
+//if(p>=10 && p<=20){
+    //console.log("Yes the age is between 10 - 20");}
+
+//else{
+    //console.log("Not verified");}
+
+
+//                       switch case
+//let x = prompt("Enter the number between 1-4");
+//x = Number.parseInt(x);
+// switch(x) {
+//     case 1 :{
+//         console.log("its cloudy");
+//     }
+//     break;
+
+//     case 2 :{
+//         console.log("its rainy");
+//     }
+//     break;
+
+//     case 3 : {
+//         console.log("its sunny");
+//     }
+//     break;
+
+//     case 4 : {
+//         console.log("its windy");
+//     }
+//     break;
+
+//     default : {
+//         console.log("Invalid");
+//     }
+//     break;
+// }
+
+
+
+// let num = prompt("Enter any number to find weather a number is divisible by 2 and 3");
+// num = Number.parseInt(num);
+// if(num%2==0 && num%3==0){
+//     console.log("yes the number is divisible by both 2 and 3");
+// }
+// else{
+//     console.log("non divisible");
+// }
+
+
+
+// let num = prompt("Enter any number to find weather a number is divisible by either 2 and 3");
+// num = Number.parseInt(num);
+
+// if(num%3==0 && num%2==0){
+//     console.log("The number is divisible by both 2 and 3");
+// }
+// else if(num%2==0){
+//     console.log("The number is divisible by 2");
+// }
+// else if(num%3==0){
+//     console.log("The number is divisible by 3");
+// }
+// else{
+//     console.log("non divisible by 2 nor 3");
+// }
+
+
+//                 ternary operator
+// let age = prompt("Enter age");
+// age = Number.parseInt(age);
+// age = age>=18? "You can drive" : "You cannot drive";
+// console.log(age);
+
+
+// console.log("har/".length);
+
+
+//console.log(navigator);
+//console.log(!true);
+
+
+
+
+
+//                   do-while loop
+// var i=1,n,fact=1;
+// n = prompt("Enter any anumber to find its factorial");
+// n=Number.parseInt(n);
+// do{
+//     fact=fact*i;
+//     i++;
+// }
+// while(i<=n);
+// console.log(fact);
+
+//                    while loop                
+// var i=1,n,fact=1;
+// n = prompt("Enter any anumber to find its factorial");
+// n=Number.parseInt(n);
+// while(i<=n){
+//     fact=fact*i;
+//     i++;
+// }
+// console.log(fact);
+
+
+//                   for loop
+//    sum of number of n digit
+// var i=0,n,fact=0;
+// n = prompt("Enter any anumber to find its factorial");
+// for(i=0;i<n;i++){
+//     fact=fact+i;
+// }
+// console.log(fact);
+
+
+
+
+//        for-in loop
+
+// const marks = {
+//     pratham : 20,
+//     avi : 1,
+//     cbum : 99,
+//     dino : 98 };
+
+// marks["arsh"]=50;
+// marks["avi"]=49;
+
+// for (let obj in marks){
+//   console.log(obj);
+//   console.log(marks[obj]);
+// }
+
+
+
+
+//           for-of loop 
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// for (let a of arr){
+//     console.log(a);
+// }
+
+
+
+//          functions 
+// function arearect(l,b){
+//     return l*b;
+// }
+
+// l = prompt("Enter the length of rectangle");
+// l = Number.parseInt(l);
+
+// b = prompt("Enter the breadth of rectangle");
+// b = Number.parseInt(b);
+// console.log(arearect(l,b));
+
+
+
+// let marks = {
+//     harry:98,
+//     rohan:70,
+//     akash:75
+// };
+
+// marks.avneesh = 95;
+// marks["abhishek"]=96;
+
+// for (var m in marks){
+//     console.log(m);
+// }
+// let i;
+// for (i=0;i<Object.values(marks).length;i++){
+//     console.log(marks[Object.keys(marks)[i]]);
+// }
+
+
+
+
+// alert("enter any number between 1 - 30 to guess correct number");
+
+// let cn=25,i;
+
+// //jab tkk y condition true hai tb tkk input lete jaao
+// while(i!=cn){
+// i = prompt("Enter number to guess");
+// }
+
+
+// console.log("you entered correct number");
+
+
+
+
+//          mean of any 5 numbers
+// let n,sum=0,i=0;
+// alert("Enter any 5 numbers to find its mean");
+// while(i<5){
+// n=prompt("Enter number");
+// n = Number.parseInt(n);
+// sum=sum+n;
+// i++;
+// }
+// avg=sum/5;
+// console.log(avg);
+
+
+
+//        string interpotation
+// let b1="avneesh",b2="arsh";
+// console.log(`${b2} is a good friend of ${b1}`);
+
+// let b1="avneesh",b2="arsh";
+// console.log("avnee\rsh");
+//console.log(`${b2} is a good friend of ${b1}`);
+
+
+
+
+//       string functions;
+// let str1 = "              avneesh bhai";
+// let str2 = " hey";
+
+// let str3 = str1.concat(str2," yess         ");
+// console.log(str3);
+
+// let str4 = str3.trim();
+// console.log(str4);
+
+// str = str1.replace("avn","nva");
+// console.log(str);
+
+// str = "avneesh yadav";
+// str100 = str.slice(1,9);
+// console.log(str100);
+
+// printing 
+// let str = "vedika";
+// let i,nstr = "";
+// for (i=0;i<str.length;i++){
+// nstr=nstr+str[i];
+// }
+// console.log(nstr);
+
+// let str = "avneesh";
+// let j,nstr = "";
+// for (j=0;j<str.length;j++){
+//   nstr=nstr+str[j];
+// }
+// console.log(nstr);
+
+//      includes,endsWith,startsWith
+// let str1 = "hey there! Am avi";
+// let estr = "there";
+
+// console.log(str1.includes("there"));
+// nstr = str1.includes(estr) ? "is in the":"is not in";
+// console.log("Word 'there' " + nstr + " sentence.")
+
+// nstr1 = str1.startsWith("hey")?"yess":"Noo";
+
+// nstr2 = str1.endsWith("avi")?"yess":"Noo";
+
+// console.log(nstr1,nstr2);
+
+
+//upper and lower case
+// console.log("HEY".toLowerCase());
+// console.log("hey".toUpperCase());
+
+
+// let str = "were you able to do it?";
+// str[3] = "yess";
+// let nstr = str.replace("to","yess");
+
+
+// console.log(nstr);
+// console.log(str);
+// strings are immutable
+
+// let str = "AVNEESH";
+// console.log(str.toLowerCase());
+
+
+
+
+//                 arrays
+// let arr = [3458,587,947,947,638,58,-9];
+// let n = arr.push(); // using push() function as the length calculator of an array instead of    .length      function.
+
+// let i,j,max;
+
+// max=arr[0];
+
+// for(i=0;i<n;i++){
+
+//     if(arr[i]>=max){
+//         max=arr[i];
+//     }
+
+// }
+// console.log(max);
+
+
+
+//        special array functions
+//let arr = [13,65,98,46]
+
+
+// let arr1 = arr.toString(); // can convert the array to string and returns string
+
+// let arr2 = arr.join("hey"); // joins the string on the place of commas ","
+
+//let arr3 = arr.pop(); // removes last element from an array returns popped element
+
+// let arr4 = arr.push(5); // returns length of an array after adding the new element at the last place
+
+// let arr5 = arr.shift(); // removes first element form an array and return removed element
+
+// let arr6 = arr.unshift(8); // returns new length of an array after adding an element on the first place
+
+// console.log(arr3);
+// console.log(arr);
+// console.log(arr4);
+// console.log(arr5);
+// console.log(arr6);
+
+
+// let marks = [98,87,97,89,67,75,78,90,80,79];
+// let i;
+// let marks00 = marks.push();
+
+// for (i=0;i<marks00;i++){
+//     console.log(marks[i]);
+// }
+
+
+// let arr = [13,65,98,46,665];
+
+// function compare(a,b){
+//     return a-b;  }
+// arr.sort(compare);
+// console.log(arr);
+
+
+// let num = [1,2,3,4,5];
+// num.splice(2,1,23,24);
+// console.log(num);
+// let b = num.slice(2);
+// console.log(b);
+
+
+//         array from string
+// let str = "Avneesh";
+// let strtoarr = Array.from(str);
+// console.log(strtoarr);
+
+// for (let i of strtoarr){
+//     console.log(i);
+// }
+
+// for (let j in strtoarr){
+//     console.log(j);
+// }
+
+
+
+
+
+//  map function returns new array with value,index,and array arguement or if u want to make manipulation so u can
+
+// let arr = [11,22,33,44,55,66]
+// console.log(arr.map((value,index,array)=>{
+//     console.log(value,index,array);
+//     return value + 1;
+// }));
+// console.log(arr);
+
+
+
+// alert("Enter the elements of array to add them");
+// let n = prompt("Enter the length of an array");
+// n = Number.parseInt(n);
+// let sum=0,i=0;
+// let arr = [];
+
+// for (i=0;i<n;i++){
+// arr[i] = prompt();
+// arr[i] = Number.parseInt(arr[i]);
+// console.log(arr[i]);
+// if(arr[i]==0){
+// console.log("0 is entered");
+// break;}
+// }
+
+// let snrr = arr.map((a)=>{return a*a;});
+// console.log(snrr);
+
+// let nrr = arr.filter((a)=>{ return a%10 == 0; });
+// console.log(nrr);
+
+// function fact(a,b){ return a*b;};
+// let rarr = arr.reduce(fact);
+// console.log(rarr);
+
+
+// let narr = Array.from(arr);
+
+// function add(x,y){
+// return x+y;}
+
+// console.log(narr(add));
+
+
+
+// document.write("Random Number is between 1-100"+  + "Guess the number")
+// let x = Math.floor(Math.random() * 100);
+
+
+// let i=0;
+// for(i=0;i<100;i++){
+
+// let n = prompt("Enter number to guess ");
+// n = Number.parseInt(n);
+// if(n>x){
+//     console.log("Entered number is greater");
+// }
+// else if (n==x){
+//     console.log("YOOOHOOO! You Entered Correct Number");
+//     console.log("Random No. Was " + x);
+//     break;
+// }
+// else {console.log("Entered number is smaller");}}
+
+
+
+//practice set 6
+// drive();
+
+// function drive(){
+// let age = prompt("Enter age");
+// age = Number.parseInt(age);
+
+
+// if (age>=18){
+//     alert("You are eligible to drive");
+//     con();
+// }
+// else if(age<0){
+//     console.error("Age cannot be negetive");
+//     con();
+// }
+// else{
+//     alert("You are underage");
+//     con();
+// }}
+
+// function con(){
+//     let c = confirm("Do you want to see prompt again ?");
+// if(c==true){
+//     drive();
+// }
+// else{
+    
+// }
+// }
+
+
+// let color = prompt("Enter the name of background color to change");
+// document.body.style.backgroundColor = color ;
+
+// let p = prompt("Enter number 1-5");
+// p = Number.parseInt(p);
+// if(p>3){
+//     window.location.href="https://google.com";
+// }
+
+
+//              stone-paper-scissors
+// let out,inp,i,temp=0;
+// random();
+// po();
+
+// function po(){
+// inp = prompt("Enter 'r' for Rock, 'p' for Paper and 's' for Secior");
+// switch(inp){
+//     case "r" : {
+//         if(out == "paper"){
+//             alert("Mine's paper... You Lose");
+//             random();
+//             po();
+//         }
+//         if(out == "rock"){
+//             alert("Again");
+//             random();
+//             po();
+//         }
+//         if(out == "secior"){
+//             alert("Mine's secior... You Win");
+//             random();
+//             po();
+//         }
+//     }
+
+//     case "p" : {
+//         if(out == "paper"){
+//             alert("Again");
+//             random();
+//             po();
+//         }
+//         if(out == "rock"){
+//             alert("Mine's rock... You Win");
+//             random();
+//             po();
+//         }
+//         if(out == "secior"){
+//             alert("Mine's Secior... You Lose");
+//             random();
+//             po();
+//         }
+//     }
+
+//     case "s" : {
+//         if(out == "paper"){
+//             alert("Mine's paper... You Win");
+//             random();
+//             po();
+//         }
+//         if(out == "rock"){
+//             alert("Mine's rock... You Lose");
+//             random();
+//             po();
+//         }
+//         if(out == "secior"){
+//             alert("Again");
+//             random();
+//             po();
+//         }
+//     }
+//         default : {
+//             alert("Invalid");
+//             random();
+//             po();
+//     }
+// }}
+
+// // computer krega
+// function random(){
+// let n = Math.floor(Math.random()*3 + 1);
+// if (n==1){
+//     out = "paper";
+// }
+// if (n==2){
+//     out = "rock";
+// }
+// if (n==3){
+//     out = "secior";
+// }
+// console.log(out);
+// }
+
+
+
+// pop function by me
+// console.log(pop1());
+
+// function pop1() {
+// let arr = [];
+// let n = prompt("Enter the lrngth of array");
+// n = Number.parseInt(n);
+// for (let j=0;j<n;j++){
+// arr[j] = prompt("Enter the lrngth of array");
+//  arr[j] = Number.parseInt (arr[j]);
+// }
+
+// for (let i=0;i<arr.length;i++){
+//     pope = arr[i];
+// }
+
+// arr.splice(arr.length-1,1);
+// console.log(arr);
+// return pope;
+// }
+
+
+
+// get text content of any tag
+//console.log(document.body.getElementsByClassName("random")[0].textContent);
+
+
+
+// eviii exercize
+// let arr = [    `What falls, but never needs a bandage? The rain.`
+//     ,`I was going to tell you a joke about boxing but I forgot the punch line.`
+//     ,`I'm not a fan of spring cleaning. Let's be honest, I'm not into summer, fall, or winter cleaning either.`
+//     ,`Why did the egg hide? It was a little chicken.`
+//     ,`What did the dirt say to the rain? If you keep this up, my name will be mud!`
+//     ,`Why couldn't the sunflower ride its bike? It lost its petals.`
+//     ,`What's an egg's favorite vacation spot? New Yolk City.`
+//     ,`I ate a sock yesterday. It was very time-consuming.`
+//     ,`What kind of candy do astronauts like? Mars bars.`
+//     ,`I wanted to buy some camo pants but couldn't find any.`];
+
+// console.log(arr.length);
+// let n = Math.floor(Math.random() * arr.length); 
+
+// console.log(arr[n]);
+
+
+//       setinterval
+//         date
+
+// setInterval(function (){
+//   let a = new Date();
+// let h = a.getHours();
+// let m = a.getMinutes();
+// let s = a.getSeconds();
+// let d = a.getDate();
+// let month = a.getMonth();
+// let year = a.getFullYear();
+// console.log(h+":"+m+":"+s+ " " + d+"/"+month+"/"+year);
+// },1000);
+
+// setInterval(function (){},3000);
+
+// let a = document.getElementsByTagName("body");
+// let arr = Array.from(a);
+// console.log(arr);
+
+
+
+
+// attribute manipulating in javascript
+
+// let a = first.getAttribute("class");
+// console.log(a);
+
+// let b =  first.hasAttribute("style");
+// console.log(b);
+
+// first.setAttribute("hidden","true");
+// first.setAttribute("class","hey lol");
+
+// first.setAttribute("data-game","mario");
+
+// console.log(first.dataset);
+
+
+//callbacks
+
+// // main function
+// function ls(src, callback){
+//   let script = document.createElement("script");
+//   script.src = src;
+
+
+//   // success acknowladgement block
+//   script.onload = function (){
+//     console.log("Script Loaded "+ src);
+//     callback(null, src);
+//   }
+//   // error acknowladgement block
+//   script.onerror = function (){
+//     console.log("Script did'nt Load "+ src);
+//     callback(new Error("Src got some error"));
+//   }
+
+//   // appending element to document body
+//   document.body.appendChild(script);
+// }
+
+
+// // callback function
+// function hello(error , src){
+//   if(error){
+//     console.log("Error");
+//     return;
+//   }
+//   console.log("hello "+ src);
+// }
+
+
+// // src arguement passing
+// ls("https://code.jquery.com/jquery-3.7.1.min.js",hello);
+
+
+
+// let p1 = new Promise((resolve, reject)=>{
+//   console.log("Work in progress");
+
+//   setTimeout(function (){
+//   reject("error");
+//   },4000);
+//   });
+
+
+// let p2 = new Promise(function (resolve,reject){
+//   console.log("Work in progress");
+
+//   setTimeout(function (){
+//   resolve(true);
+//   },4000);
+// })
+
+// p2.then((value)=>{
+//   console.log(value);
+// });
+
+// p1.catch((error)=>{
+//   console.log("Some error ocured");
+// })
+
+// console.log(p1,p2);
+
+
+
+// let p1 = new Promise((resolve,reject)=>{
+//   console.log("Work in progress");
+//   setTimeout( function(){
+//     console.log("p1 Resolved");
+//     resolve(true);//
+//   },2000 )
+  
+// }).then((value)=>{
+//   console.log(value);
+//   return new Promise((resolve,reject)=>{
+//    setTimeout(()=>{ resolve(1);},2000 )
+//   });
+  
+// }).then((value)=>{
+//   console.log(value);
+//   console.log("We are done");
+//   return 2;
+
+// }).then((value)=>{
+//   console.log(value);
+//   return new Promise((resolve, reject)=>{
+//   setTimeout(()=>{console.log("hey resolved")
+// resolve(4); },3000);})
+  
+// }).then((value)=>{
+//   console.log(value);
+// })
+
+
+// let p1 = new Promise((resolve, reject)=>{
+//   setTimeout(()=>{
+//     resolve("value 1");
+//   },1000);
+// });
+
+// let p2 = new Promise((resolve, reject)=>{
+//   setTimeout(()=>{
+//     reject(new Error("value 2"));
+//   },500);
+// });
+
+// let p3 = new Promise((resolve, reject)=>{
+//   setTimeout(()=>{
+//     resolve("value 3");
+//   },3000);
+// });
+
+// p2.catch((error)=>{
+//   console.log("Error occured");
+// });
+
+// let promiseall = Promise.all([p1,p2,p3]);
+// promiseall.then((value)=>{
+//   console.log(value);
+// })
+
+// promiseall = Promise.allSettled([p1,p2,p3]);
+// promiseall.then((value)=>{
+//   console.log(value);
+// })
+
+// promiseall = Promise.race([p1,p2,p3]);
+// promiseall.then((value)=>{
+//   console.log(value);
+// })
+
+// promiseall = Promise.any([p1,p2,p3]);
+// promiseall.then((value)=>{
+//   console.log(value);
+// })
+
+// promiseall = Promise.resolve(8);
+// promiseall.then((value)=>{
+//   console.log(value);
+// })
+
+// promiseall = Promise.reject([p1,p2,p3]);
+// promiseall.then((value)=>{
+//   console.log(value);
+// })
+
+
+
+
+// async await
+// async function avi(){
+
+//   let weatherDelhi = new Promise((resolve , reject)=>{
+//     setTimeout(()=>{
+//       resolve("27 deg");
+//       console.log("hey1");
+//     },5000);
+//   });
+
+//   let weatherJabalpur = new Promise((resolve , reject)=>{
+//     setTimeout(()=>{
+//       resolve("20 deg");
+//       console.log("hey2");
+//     },2000);
+//   });
+
+//   let wd = await weatherDelhi;
+//   let wj = await weatherJabalpur;
+//   return [wd,wj];
+
+// };
+
+
+// async function cia(){
+
+// let weatherDeheradun = new Promise((resolve , reject)=>{
+//   setTimeout(()=>{
+//     resolve("25 deg");
+//     console.log("hey3");
+//   },5000);
+// });
+
+// let weatherJodhpur = new Promise((resolve , reject)=>{
+//   setTimeout(()=>{
+//     resolve("15 deg");
+//     console.log("hey4");
+//   },2000);
+// });
+
+// let wdn = await weatherDeheradun;
+// let wjp = await weatherJodhpur;
+// return [wdn,wjp];
+
+// };
+
+
+// async function main1(){
+
+// let c = await cia();
+// let a = await avi();
+// console.log(a,c);
+
+// }
+
+// main1();
+
+
+
+//   classes and object
+// let id,name;
+
+// class Avi{
+// public
+// Employee (){
+// console.log("ID is " + id + " Name is " + name);
+// }
+// }
+
+
+// let obj = new Avi();
+// id = prompt("Enter ID");
+// name = prompt("Enter Name");
+// obj.Employee();
+
+// constructor
+// class vehicle{
+//   constructor (name,comp,engine){
+//     this.name = name;
+//     this.comp = comp;
+//     this.engine = engine;
+//   }
+
+//   getDetails(){
+//     console.log(`${this.name} is a name ${this.comp} is its company and having ${this.engine} engine`);
+//   }
+// }
+
+// let obj = new vehicle("Roadster","Harley Davidon","990CC");
+// let obj1 = new vehicle("Boxer","Yahama","100CC");
+
+// obj.getDetails();
+// obj1.getDetails();
+
+// objects with function
+// function Employee(Id,name){
+//   this.Id = Id;
+//   this.name = name;
+// }
+// let obj1 = new Employee(101,"Avneesh");
+// let obj2 = new Employee(102,"Anurag");
+
+
+// console.log(obj1.Id + " " + obj1.name);
+// console.log(obj2.Id + " " + obj2.name);
+
+
+//  try and catch 
+// let a=101;
+// try{
+//   console.log(a);
+// }catch(error){
+//   console.log("Error Occured");
+// }
+// try block does'nt run Asynchronous block of code
+//Example
+// let a=101;
+// try{
+//   setTiomeout(()=>{
+//     console.log(a);
+//   },100);
+// }catch(error){
+//   console.log("Error Occured");
+// }
+
+
+//coustom errors
+// try{
+//    throw new SyntaxError("Harry is good");
+// }catch(error){
+//   console.log(error);
+//   console.log(error.name);
+//   console.log(error.message);
+//   console.log(error.stack);
+// }
+
+// program for coustom errors
+// try{
+//   let age = prompt("Enter the age");
+//   age = Number.parseInt(age);
+//   if(age>=75){
+//     throw new SyntaxError("Hey.... invalid age u dumbass");
+//   // mdn reference m orr type k error bhi mill jayenge
+// }
+//     else{
+//       console.log(age);
+//     }
+  
+// }catch(error){
+//   console.log(error.message);
+// }
+
+
+
+
+
+// practice set 
+
+// const loadScript = (src)=>{
+//   return new Promise (( resolve , reject )=>{
+
+//     let script = document.createElement("script");
+//     script.src = src;
+
+//     script.onerror = function (){
+//       console.log("Error");
+//     }
+
+//     document.head.appendChild(script);
+//     resolve("success");
+//   }).then((value)=>{
+//     console.log(value);
+//     console.log("done");
+//   })
+ 
+// }
+
+// const main1 = async ()=>{
+//   let d = await new Date();
+//   let a = await loadScript("https://code.jquery.com/jquery-3.7.1.min.js");
+//   console.log(d);
+//   console.log(a);
+// }
+
+// main1();
+
+
+// const p1 = async()=>{
+// return new Promise ((resolve, reject)=>{
+//   setTimeout(()=>{
+//   reject(200);
+//  },3000);
+// })}
+
+// const main1 = async ()=>{
+// try{
+//   let valuep1 = await p1(); 
+// }
+// catch(reject){
+//   console.log("error has been caught");
+// }
+// }
+//main1();
+
+// const p1 = async()=>{
+// return new Promise ((resolve, reject)=>{
+//   setTimeout(()=>{
+//   resolve(300);
+//  },3000);
+// })}
+
+// const p2 = async()=>{
+// return new Promise ((resolve, reject)=>{
+//   setTimeout(()=>{
+//   resolve(200);
+//  },2000);
+// })}
+
+// const p3 = async()=>{
+// return new Promise ((resolve, reject)=>{
+//   setTimeout(()=>{
+//   resolve(100);
+//  },1000);
+// })}
+
+// main1 = async ()=>{
+//   console.time("main1");
+//   // let a = await p1();
+//   // let c = await p3();
+//   // let b = await p2();
+//   // console.log(a,b,c)
+//   let v = await  Promise.all([p1(),p2(),p3()]);
+//   // promise.all() function jo hai vo pure promise execute hone ke baad output dedeta h wait krrta h upto max time limit and better than await when using with promices
+//   console.log(Promise.race([p1(),p2(),p3()]));
+//   console.log(v);
+//   console.timeEnd("main1");
+// }
+// main1();
+
+
+// api
+// let p = fetch("https://goweather.herokuapp.com/weather/LosAngles");
+
+// p.then((value1)=>{
+//   console.log(value1.status);
+//   console.log(value1.ok);
+//   return value1.json();
+// }).then((value2)=>{
+//   console.log(value2);
+// })
+
+
+
+// let fetching = async ()=>{ 
+//   let p = fetch("https://api.spacexdata.com/v5/launches/latest");
+
+//     let req = fetch ("https://api.spacexdata.com/v5/launches/latest" , {
+//       header : {
+//         authentication : "secret"
+//       }
+//     });
+
+//   p.then((value)=>{
+//   console.log(value.status);
+//   console.log(value.ok);
+//   console.log(value.headers);
+//   return value.json();
+// }).then((value2)=>{
+//   console.log(value2);
+// })}
+
+
+// // fetching();
+// let main1 = async ()=>{ 
+// await fetching();
+// }
+
+// main1();
+
+
+
+//let data = {
+  //  title : "avneesh",
+    // id : 198 
+  //}
+
+//const options = {
+  //method: 'POST',
+  //headers: {
+    //'Content-Type': 'application/json' // Specify the content type if sending JSON data
+    // Add other headers as needed
+  //},
+  //body: JSON.stringify(data) // Convert data to JSON string
+//};
+
+//const fetching = async ()=>{
+
+
+//let p = await fetch("https://jsonplaceholder.typicode.com/todos/" , options);
+//let response = await p.text();
+//return response;
+//}
+
+
+
+//async function main1(){
+  //let data = await fetching();
+  
+  //console.log(data);
+  //console.log(data.description);
+//}
+
+//main1();
+
+// cookies // encodeURI // decodeURI
+//let key  = prompt("Enter the key");
+//let name  = prompt("Enter the name");
+//document.cookie=(`${encodeURIComponent(key)}=${encodeURIComponent(name)}`);
+
+
+// local storage in browser
+
+//let key  = prompt("Enter the key");
+//let name  = prompt("Enter the name");
+//localStorage.setItem(key,name);
+//localStorage.removeItem(key);
+//localStorage.clear();
+//console.log(localStorage.key(0));  //indexing in localStorage
+//console.log(localStorage.getItem(key));
+
+
+// session storage in browser
+
+// let key  = prompt("Enter the key");
+// let name  = prompt("Enter the name");
+// sessionStorage.setItem(key,name);
+// console.log(sessionStorage.key(0));  //indexing in sessionStorage
+// console.log(sessionStorage.getItem(key));
+// sessionStorage.removeItem(key);
+// console.log(sessionStorage);
+// sessionStorage.clear();
+
+// window.onstorage = (e)=>{
+//   alert("changed");
+//   console.log(e);
+// }
+
+
+// practice set 10
+
+
+
+
+</script>
+</body>
+</html>

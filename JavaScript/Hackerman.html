@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackerman</title>
+</head>
+<body>
+   <h1>HackerMan</h1> 
+<script>
+    
+    let p1 =  new Promise((resolve , reject)=>{setTimeout(()=>{
+            document.body.innerHTML = "<div>Data Fetching</div>"; 
+            resolve("wht_avi") ;
+        },2000);} )
+        
+    
+   p1.then((value)=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            document.body.innerHTML = `<div>Fetching user name </div>`+ value ;
+            resolve("Avneesh Yadav");
+        },3000);})
+    }).then((value)=>{
+        return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            document.body.innerHTML = `<div>Fetching name </div>`+ value ;
+            resolve("Age = 19");
+        },2000);})
+    })
+
+    const main1 = async ()=>{
+        console.time("main1");
+        await p1;
+        console.timeEnd("main1");
+    }
+
+    main1();
+</script>
+</body>
+</html>
